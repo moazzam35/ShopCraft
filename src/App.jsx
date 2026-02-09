@@ -19,83 +19,88 @@ import Checkout from "./components/Checkout/checkout";
 import OrderConfirmation from "./components/Checkout/OrderConfirmation";
 import Wishlist from "./components/Wishlist/Wishlist";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "/",
+          element: <Hero />,
+        },
+        {
+          path: "/products",
+          element: <Products />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/shipping-info",
+          element: <ShippingInfo />,
+        },
+        {
+          path: "/returns",
+          element: <Returns />,
+        },
+        {
+          path: "/faq",
+          element: <FAQ />,
+        },
+        {
+          path: "/track-order",
+          element: <TrackOrder />,
+        },
+        {
+          path: "/support",
+          element: <Support />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
+        },
+        {
+          path: "/privacy-policy",
+          element: <PrivacyPolicy />,
+        },
+        {
+          path: "/terms-of-service",
+          element: <TermsOfService />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/checkout",
+          element: <Checkout />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/product/:id",
+          element: <ProductDetail />,
+        },
+        {
+          path: "/order-confirmation",
+          element: <OrderConfirmation />,
+        },
+        {
+          path: "/wishlist",
+          element: <Wishlist />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Hero />,
-      },
-      {
-        path: "/products",
-        element: <Products />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/shipping-info",
-        element: <ShippingInfo />,
-      },
-      {
-        path: "/returns",
-        element: <Returns />,
-      },
-      {
-        path: "/faq",
-        element: <FAQ />,
-      },
-      {
-        path: "/track-order",
-        element: <TrackOrder />,
-      },
-      {
-        path: "/support",
-        element: <Support />,
-      },
-      {
-        path: "/blog",
-        element: <Blog />,
-      },
-      {
-        path: "/privacy-policy",
-        element: <PrivacyPolicy />,
-      },
-      {
-        path: "/terms-of-service",
-        element: <TermsOfService />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/checkout",
-        element: <Checkout />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/product/:id",
-        element: <ProductDetail />,
-      },
-      {
-        path: "/order-confirmation",
-        element: <OrderConfirmation />,
-      },
-      {
-        path: "/wishlist",
-        element: <Wishlist />,
-      },
-    ],
-  },
-]);
+    basename: "/e-com",
+  }
+);
 
 function App() {
   return <RouterProvider router={router} />;
